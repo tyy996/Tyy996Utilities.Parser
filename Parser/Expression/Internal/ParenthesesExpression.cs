@@ -1,0 +1,15 @@
+﻿using System;
+
+namespace Tyy996Utilities.Parser.Expression
+{
+    internal sealed class ParenthesesExpression : IExpression
+    {
+        public bool IsOpen { get; private set; }
+        public ExpressionType Type { get { return IsOpen ? ExpressionType.OpenParentheses : ExpressionType.CloseParentheses; } }
+
+        public ParenthesesExpression(bool isOpen)
+        {
+            IsOpen = isOpen;
+        }
+    }
+}
